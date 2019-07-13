@@ -222,6 +222,8 @@ func BuildValue(goval interface{}) (v Value, err error) {
 			val = 1
 		}
 		v = Value{Numeric(strconv.AppendInt(nil, int64(val), 10))}
+	case int8:
+		v = Value{Numeric(strconv.AppendInt(nil, int64(bindVal), 10))}
 	case int:
 		v = Value{Numeric(strconv.AppendInt(nil, int64(bindVal), 10))}
 	case int32:
